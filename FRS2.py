@@ -20,7 +20,7 @@ face_haar_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_f
 cap = cv2.VideoCapture(0)
 
 while True:
-    ret, test_img = cap.read()  # captures frame and returns boolean value and captured image
+    ret, test_img = cap.read()  # captures frames and returns the boolean value to the captured image
     if not ret:
         continue
     gray_img = cv2.cvtColor(test_img, cv2.COLOR_BGR2RGB)
@@ -47,7 +47,7 @@ while True:
     resized_img = cv2.resize(test_img, (1000, 700))
     cv2.imshow('Facial emotion analysis ', resized_img)
 
-    if cv2.waitKey(10) == ord('q'):  # wait until 'q' key is pressed
+    if cv2.waitKey(10) == ord('q'):  # press 'q' to kill the window
         break
 
 cap.release()
